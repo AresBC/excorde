@@ -1,0 +1,29 @@
+[staticPage]
+useContent = 1
+default = 0
+
+[staticMenu MainMenuAuto]
+code = "mainmenuauto"
+==
+<?php
+public function onEnd()
+{
+    $this['eles'] = ['home', 'contact', 'impressum'];
+}
+?>
+==
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+{{ dump(MainMenuAuto) }}
+{% partial "mainMenu" items=MainMenuAuto.menuItems class='mr-auto' %}
+{% page %}
+</body>
+</html>
